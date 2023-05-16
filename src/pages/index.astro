@@ -1,9 +1,10 @@
 ---
-import Backdrop from '../components/Backdrop.astro'
-import ThemeIcon from '../components/ThemeIcon.astro'
+import ThemeIcon from '../components/ThemeIcon.astro';
+
+import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="en" class="center">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,7 +14,6 @@ import ThemeIcon from '../components/ThemeIcon.astro'
 	</head>
 	<body>
 		<ThemeIcon />
-		<Backdrop />
 		<h1>Adin Dashboard</h1>
 		<p>Coming soon...</p>
 	</body>
