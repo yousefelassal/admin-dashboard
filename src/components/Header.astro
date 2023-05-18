@@ -1,20 +1,50 @@
 ---
-import ThemeIcon from '../components/ThemeIcon.astro';
-
+import ThemeIcon from "../components/ThemeIcon.astro";
 ---
-<div class="header-margin col-span-full backdrop-blur-sm fixed shadow-sm">
-    <ThemeIcon />
+
+<div class="header-margin backdrop-blur-sm fixed shadow-sm header-grid">
+    <div class="header-grid-left">
+        <a href="/" class="text-2xl font-bold text-gray-700 dark:text-gray-100 flex gap-1">
+            <svg width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                ><path class="dark:fill-slate-100"
+                    d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z"
+                    fill="#00a8c6"></path></svg
+            >
+            Dashboard
+        </a>
+    </div>
+    <div class="header-grid-right">
+        <ThemeIcon />
+    </div>
 </div>
 
 <style>
-.header-margin{
-    top: 0;
-    z-index: 100;
-    height: 4rem;
-    width: 100%;
-    background-color: var(--color-bg);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border);
-    padding: 1rem;
-}
+    .header-margin {
+        top: 0;
+        z-index: 100;
+        height: 4rem;
+        width: 100%;
+        background-color: var(--color-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--color-border);
+        padding: 1rem;
+    }
+
+    .header-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "left right";
+        align-items: center;
+    }
+
+    .header-grid-left {
+        grid-area: left;
+        font-family: 'Fjalla One', sans-serif;
+    }
+
+    .header-grid-right {
+        grid-area: right;
+        justify-self: end;
+    }
 </style>
