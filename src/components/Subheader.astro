@@ -14,7 +14,7 @@ import Searchbar from './Searchbar.astro';
             <div id="active" class="active">
                 <a href="#" class="p-2">Active</a>
             </div>
-            <div id="completed">
+            <div id="completed" class="unactive">
                 <a href="#" class="p-2">Completed</a>
             </div>
         </div>
@@ -29,9 +29,14 @@ import Searchbar from './Searchbar.astro';
     }
 
     .active{
-        text-decoration: underline;
+        border-bottom: 2px solid #73dcf9cc;
+        padding-bottom: 0.5rem;
         color: #73dcf9cc;
-        text-underline-offset: 0.5rem;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .unactive{
+        color: #7f9693cc;
         transition: all 0.1s ease-in-out;
     }
 
@@ -48,10 +53,14 @@ import Searchbar from './Searchbar.astro';
     active.addEventListener('click', () => {
         active.classList.add('active');
         completed.classList.remove('active');
+        active.classList.remove('unactive');
+        completed.classList.add('unactive');
     });
 
     completed.addEventListener('click', () => {
         completed.classList.add('active');
         active.classList.remove('active');
+        completed.classList.remove('unactive');
+        active.classList.add('unactive');
     });
 </script>
