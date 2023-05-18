@@ -2,8 +2,8 @@
 
 ---
 
-<div class="sidebar grid grid-cols-1 fixed">
-    <div class="sidebar-top grid grid-cols-1 place-content-start p-4 gap-5">
+<div class="sidebar grid grid-cols-1 fixed font-bold">
+    <div class="sidebar-top grid grid-cols-1 place-content-start p-4 gap-5 bg-sky-200/10">
         <a href="/">Home</a>
         <a href="/">Profile</a>
         <a href="/">Messages</a>
@@ -11,7 +11,7 @@
         <a href="/">Tasks</a>
         <a href="/">Communities</a>
     </div>
-    <div class="sidebar-bottom grid grid-cols-1 place-content-end p-4 gap-5">
+    <div class="sidebar-bottom grid grid-cols-1 place-content-end p-4 gap-5 bg-sky-200/10">
         <a href="/">Settings</a>
         <a href="/">Support</a>
         <a href="/">Privacy</a>
@@ -21,10 +21,12 @@
     .sidebar {
         width: 200px;
         height: calc(100vh - 4rem);
-        border-right: 1px solid #e6e6e6;
         top: 4rem;
         left: 0;
         z-index: 100;
     }
 
+    .sidebar-top a:hover, .sidebar-bottom a:hover {
+        color: #7f9693;
+    }
 </style>
