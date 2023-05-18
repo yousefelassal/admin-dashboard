@@ -2,21 +2,32 @@
 
 ---
 
-<div class="profile hover:cursor-pointer justify-center items-center flex bg-cyan-950 shadow-sm dark:bg-white">
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="#fff"
-        width="28px"
-        height="28px"
-        class=""
-    >
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path
-            class="bg-current dark:fill-cyan-950"
-            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-    </svg>
+<div class="profile-container">
+    <button id="profile" class="profile hover:cursor-pointer justify-center items-center flex bg-cyan-950 shadow-sm dark:bg-white">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#fff"
+            width="28px"
+            height="28px"
+            class=""
+        >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+                class="bg-current dark:fill-cyan-950"
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+        </svg>
+    </button>
+    <div id="profile-popover">
+        <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg dark:bg-gray-800">
+            <div class="py-1">
+                <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-700">Settings</a>
+                <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-700">Projects</a>
+                <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-700">Sign Out</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -26,4 +37,45 @@
         border-radius: 50%;
         border: 1px solid var(--color-border);
     }
+
+    .profile-container{
+        position:relative;
+    }
+
+    #profile-popover{
+        display:none;
+    }
+
+    #profile-popover.hidden{
+        display:block;
+    }
+
+    .profile.active{
+        border: 1px solid white;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #profile-popover {
+        animation: fadeIn 0.3s ease-in-out;
+    }
 </style>
+
+<script>
+    const profilePopover = document.getElementById('profile-popover');
+    const profileButton = document.getElementById('profile');
+
+    profileButton.addEventListener('click', () => {
+        profilePopover.classList.toggle('hidden');
+        profileButton.classList.toggle('active');
+    });
+</script>
