@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Subheader from '../components/Subheader.astro';
+import Sidebar from '../components/Sidebar.astro';
 import '../styles/global.css';
 ---
 
@@ -14,6 +15,7 @@ import '../styles/global.css';
 	</head>
 	<body>
 		<Header />
+		<Sidebar />
 		<div class="grid-container gap-4">
 			<Subheader />
 			<div class="bg-white dark:bg-black rounded-lg shadow-lg p-4">
@@ -27,11 +29,13 @@ import '../styles/global.css';
 <style>
 	.grid-container {
 		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
-			'sidebar header header'
-			'sidebar main panel';
-		height: 100vh;
+			'header header'
+			'main panel';
+		height: calc(100vh - 4rem);
+		padding: 0 0 0 12rem;
+
 	}
 </style>
