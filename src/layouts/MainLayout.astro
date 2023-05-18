@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Subheader from '../components/Subheader.astro';
 import '../styles/global.css';
 ---
 
@@ -12,8 +13,9 @@ import '../styles/global.css';
 		<title>Admin Dashboard</title>
 	</head>
 	<body>
+		<Header />
 		<div class="grid-container gap-4">
-			<Header />
+			<Subheader />
 			<div class="bg-white dark:bg-black rounded-lg shadow-lg p-4">
 				<h2 class="text-2xl font-bold">Admin Dashboard</h2>
 				<p class="text-gray-500">Coming soon...</p>
@@ -28,7 +30,7 @@ import '../styles/global.css';
 		grid-template-columns: 1fr 2fr 1fr;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
-			'header header header'
+			'sidebar header header'
 			'sidebar main panel';
 		height: 100vh;
 	}
