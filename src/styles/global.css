@@ -37,7 +37,7 @@
   body {
     display:block;
     width: 100%;
-    padding: 1rem;
+    /* padding: 1rem; */
     background: linear-gradient(
       to bottom,
       transparent,
@@ -58,7 +58,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
   
   .center::before {

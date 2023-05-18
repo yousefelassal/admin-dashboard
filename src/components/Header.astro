@@ -2,6 +2,19 @@
 import ThemeIcon from '../components/ThemeIcon.astro';
 
 ---
-<div>
-<ThemeIcon />
+<div class="header-margin col-span-full backdrop-blur-sm fixed shadow-sm">
+    <ThemeIcon />
 </div>
+
+<style>
+.header-margin{
+    top: 0;
+    z-index: 100;
+    height: 4rem;
+    width: 100%;
+    background-color: var(--color-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem;
+}
+</style>
