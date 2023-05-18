@@ -9,6 +9,16 @@ import Searchbar from './Searchbar.astro';
         <Searchbar />
         <RadialMenu />
     </div>
+    <div class="flex justify-between m-2">
+        <div class="flex gap-4">
+            <div id="active" class="active">
+                <a href="#" class="p-2">Active</a>
+            </div>
+            <div id="completed">
+                <a href="#" class="p-2">Completed</a>
+            </div>
+        </div>
+    </div>
     
 </div>
 
@@ -17,4 +27,31 @@ import Searchbar from './Searchbar.astro';
         margin-top: 0.5rem;
         grid-area: header;
     }
+
+    .active{
+        text-decoration: underline;
+        color: #73dcf9cc;
+        text-underline-offset: 0.5rem;
+        transition: all 0.1s ease-in-out;
+    }
+
+    a:hover {
+        color: #7f9693;
+    }
+
 </style>
+
+<script>
+    const active = document.getElementById('active');
+    const completed = document.getElementById('completed');
+
+    active.addEventListener('click', () => {
+        active.classList.add('active');
+        completed.classList.remove('active');
+    });
+
+    completed.addEventListener('click', () => {
+        completed.classList.add('active');
+        active.classList.remove('active');
+    });
+</script>
