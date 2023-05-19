@@ -1,0 +1,44 @@
+---
+const {d, title} = Astro.props;
+---
+
+<a href="#">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 48 48"
+        width="24px"
+        height="24px"
+        ><path
+            class=""
+            d={d}
+        ></path></svg
+    >
+    {title}
+</a>
+<style>
+    a:hover {
+            color: #7f9693;
+        }
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    html.dark a {
+        color: #f5fffe;
+    }
+
+    a:hover svg {
+        fill: #7f9693;
+    }
+
+    html.dark a svg {
+        fill: #f5fffe;
+    }
+
+    html.dark a:hover svg {
+        fill: #7f9693;
+    }
+</style>
+
