@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-
+import Subheader from '../components/Subheader.astro';
 ---
 
-<MainLayout />
+<MainLayout>
+    <div class="grid-container gap-4">
+        <Subheader />
+        <div class="main bg-white/50 dark:bg-black/50 rounded-lg shadow-lg p-4 m-2">
+            <h2 class="text-2xl font-bold">Admin Dashboard</h2>
+            <p class="text-gray-500">Coming soon...</p>
+        </div>
+        <div class="panel bg-white/50 dark:bg-black/50 rounded-lg shadow-lg p-4 m-2">
+            <h2 class="text-2xl font-bold">Admin Dashboard</h2>
+            <p class="text-gray-500">Coming soon...</p>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+	.grid-container {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			'header panel'
+			'main panel';
+		height: calc(100vh - 4rem);
+		padding: 0 0 0 14rem;
+        width: calc(100vw - 1.2rem);
+	}
+
+	.panel{
+		grid-area: panel;
+	}
+
+	.main{
+		grid-area: main;
+	}
+</style>
