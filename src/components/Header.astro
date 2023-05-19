@@ -5,22 +5,12 @@ import ProfileIcon from "../components/ProfileIcon.astro";
 
 <div class="header-margin backdrop-blur-sm fixed shadow-sm header-grid">
     <div class="header-grid-left">
-        <a
-            href="/"
-            class="text-2xl font-bold text-gray-700 dark:text-gray-100 flex gap-1"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 48 48"
-                width="32px"
-                height="32px"
-                ><path
-                    class="dark:fill-slate-100"
-                    d="M24 4A10 10 0 1024 24 10 10 0 1024 4zM36.021 28H11.979C9.785 28 8 29.785 8 31.979V33.5c0 3.312 1.885 6.176 5.307 8.063C16.154 43.135 19.952 44 24 44c7.706 0 16-3.286 16-10.5v-1.521C40 29.785 38.215 28 36.021 28z"
-                    fill="#00a8c6"
-                ></path></svg
+        <a href="/" class="text-2xl font-bold text-gray-700 dark:text-gray-100 flex gap-1">
+            <svg width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                ><path class="dark:fill-slate-100"
+                    d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z"
+                    fill="#00a8c6"></path></svg
             >
-
             Dashboard
         </a>
     </div>
@@ -52,7 +42,7 @@ import ProfileIcon from "../components/ProfileIcon.astro";
 
     .header-grid-left {
         grid-area: left;
-        font-family: "Fjalla One", sans-serif;
+        font-family: 'Fjalla One', sans-serif;
     }
 
     .header-grid-right {
@@ -60,4 +50,6 @@ import ProfileIcon from "../components/ProfileIcon.astro";
         justify-self: end;
         align-self: center;
     }
+
+    
 </style>
