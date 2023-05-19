@@ -1,8 +1,8 @@
 ---
-const {d, title} = Astro.props;
+const {c, d, title} = Astro.props;
 ---
 <div class="relative">
-    <a href="#" id=`S-${title}`>
+    <a href="#" id=`S-${title}` class={c}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
@@ -15,22 +15,13 @@ const {d, title} = Astro.props;
         >
         {title}
     </a>
-    <div class="box absolute">
-        <div class="flex flex-col gap-2">
-            msh3arf
+    <div id=`B-${title}` class="box absolute left-[-22px] top-0 w-3 h-8 bg-cyan-500 rounded-md shadow-lg dark:bg-teal-900 scale-0">
+        <div class="py-1">
         </div>
     </div>
 </div>
 <style>
 
-    .box {
-        display: none;
-        top: 0;
-        left: 24px;
-        width: 8rem;
-        height: 12rem;
-        background-color: #24ffe9;
-    }
     a:hover {
             color: #7f9693;
         }
@@ -55,5 +46,40 @@ const {d, title} = Astro.props;
     html.dark a:hover svg {
         fill: #7f9693;
     }
+
+    a.active{
+        @apply text-cyan-500;
+    }
+
+    html.dark a.active {
+        @apply text-teal-500;
+    }
+
+    a.active svg {
+        @apply fill-cyan-500;
+    }
+
+    html.dark a.active svg {
+        @apply fill-teal-500;
+    }
+
+    a.active + .box {
+        @apply scale-100;
+    }
+
 </style>
 
+<script>
+    const icons = document.querySelectorAll('[id^="S-"]');
+
+    icons.forEach((icon) => {
+        icon.addEventListener('click', (e) => {
+            icons.forEach((icon) => {
+                icon.classList.remove('active');
+            });
+            icon.classList.add('active');
+        });
+    });
+
+    
+</script>
