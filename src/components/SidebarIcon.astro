@@ -1,21 +1,36 @@
 ---
 const {d, title} = Astro.props;
 ---
-
-<a href="#">
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 48 48"
-        width="24px"
-        height="24px"
-        ><path
-            class=""
-            d={d}
-        ></path></svg
-    >
-    {title}
-</a>
+<div class="relative">
+    <a href="#" id=`S-${title}`>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            width="24px"
+            height="24px"
+            ><path
+                class=""
+                d={d}
+            ></path></svg
+        >
+        {title}
+    </a>
+    <div class="box absolute">
+        <div class="flex flex-col gap-2">
+            msh3arf
+        </div>
+    </div>
+</div>
 <style>
+
+    .box {
+        display: none;
+        top: 0;
+        left: 24px;
+        width: 8rem;
+        height: 12rem;
+        background-color: #24ffe9;
+    }
     a:hover {
             color: #7f9693;
         }
