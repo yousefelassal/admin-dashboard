@@ -1,20 +1,73 @@
 ---
 const {name, tag, body} = Astro.props;
 ---
-
-<div class="profile gap-3">
-    <div class="profile-image">
-        <img src=`https://ui-avatars.com/api/?name=${name}&rounded=true&background=random&color=fff&size=42` alt="Profile Image">
+<div class="relative">
+    <div class="profile gap-3">
+        <div class="profile-image">
+            <img src=`https://ui-avatars.com/api/?name=${name}&rounded=true&background=random&color=fff&size=42` alt="Profile Image">
+        </div>
+        <div class="profile-text grid">
+            <h2 id="tag" class="font-bold hover:underline hover:cursor-pointer">{tag}</h2>
+            <p>{body}</p>
+        </div>
     </div>
-    <div class="profile-text grid">
-        <h2 class="font-bold hover:underline hover:cursor-pointer">{tag}</h2>
-        <p>{body}</p>
+    <div id="popover-user-profile" role="tooltip" class="absolute invisible z-10 inline-block w-64 text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">
+        <div class="p-3">
+            <div class="flex items-center justify-between mb-2">
+                <a href="#">
+                    <img src=`https://ui-avatars.com/api/?name=${name}&rounded=true&background=random&color=fff&size=42` alt="Profile Image">
+                </a>
+                <div>
+                    <button type="button" class="text-white bg-cyan-500 hover:bg-cyan-600 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-teal-900 dark:hover:bg-teal-950 focus:outline-none dark:focus:ring-teal-800">Follow</button>
+                </div>
+            </div>
+            <p class="text-base font-semibold leading-none text-gray-900 dark:text-white">
+                <a href="#">{name}</a>
+            </p>
+            <p class="mb-3 text-sm font-normal">
+                <a href="#" class="hover:underline">{tag}</a>
+            </p>
+            <p class="mb-4 text-sm">{body}</p>
+            <ul class="flex text-sm">
+                <li class="mr-2">
+                    <a href="#" class="hover:underline">
+                        <span class="font-semibold text-gray-900 dark:text-white">799</span>
+                        <span>Following</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">
+                        <span class="font-semibold text-gray-900 dark:text-white">3,758</span>
+                        <span>Followers</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
-
 <style>
     .profile{
         display: grid;
         grid-template-columns: auto 1fr;
     }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #popover-user-profile {
+        top: -13rem;
+    }
+
+    .profile:has(.profile-text #tag:hover) + #popover-user-profile {
+        animation: fadeIn 0.3s ease-in-out forwards;
+        visibility: visible;
+    }
+
+
 </style>
