@@ -2,12 +2,12 @@
 const {name, tag, body} = Astro.props;
 ---
 
-<div class="profile gap-2">
+<div class="profile gap-3">
     <div class="profile-image">
-        <img src=`https://ui-avatars.com/api/?name=${name}&rounded=true&background=random&color=fff&size=38` alt="Profile Image">
+        <img src=`https://ui-avatars.com/api/?name=${name}&rounded=true&background=random&color=fff&size=42` alt="Profile Image">
     </div>
     <div class="profile-text grid">
-        <h2>{tag}</h2>
+        <h2 class="font-bold">{tag}</h2>
         <p>{body}</p>
     </div>
 </div>
