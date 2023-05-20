@@ -1,3 +1,11 @@
 ---
-
+const {title, body} = Astro.props;
 ---
+
+<li class="grid grid-rows-3 grid-cols-1">
+    <h2>{title}</h2>
+    <p>{body}</p>
+    <div class="grid grid-flow-col justify-items-end">
+        <a href="#" class="btn btn-primary">Read more</a>
+    </div>
+</li>
