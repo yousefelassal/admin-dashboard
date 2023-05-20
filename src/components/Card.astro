@@ -2,9 +2,9 @@
 const {title, body} = Astro.props;
 ---
 
-<li class="card-grid grid-cols-1 bg-white/50 dark:bg-gray-800/50 rounded-lg shadow-lg p-4 m-2 h-60">
-    <h2>{title}</h2>
-    <p>{body}</p>
+<li class="card-grid grid-cols-1 bg-white/50 dark:bg-gray-800/50 rounded-lg shadow-lg p-4 m-2 h-48 border-l-8 border-l-cyan-500 dark:border-l-teal-900">
+    <h2 class="text-md font-bold">{title}</h2>
+    <p class="text-sm card-body text-gray-500">{body}</p>
     <div class="grid grid-flow-col justify-items-end">
         <a href="#" class="btn btn-primary">Read more</a>
         <a href="#" class="btn btn-primary">Read more</a>
@@ -16,6 +16,10 @@ const {title, body} = Astro.props;
     .card-grid {
         display: grid;
         grid-template-rows: auto 1fr auto;
-        grid-gap: 1rem;
+        grid-gap: 0.2rem;
+    }
+
+    .card-body{
+        max-width: 30ch;
     }
 </style>
