@@ -7,7 +7,7 @@ import Card from '../components/Card.astro';
 <MainLayout>
     <div class="grid-container gap-4">
         <Subheader />
-        <div class="main bg-white/50 dark:bg-black/50 rounded-lg shadow-lg p-4 m-2">
+        <div class="main p-4 m-2">
 			<Card />
         </div>
         <div class="panel bg-white/50 dark:bg-black/50 rounded-lg shadow-lg p-4 m-2">
@@ -36,5 +36,8 @@ import Card from '../components/Card.astro';
 
 	.main{
 		grid-area: main;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-auto-rows: minmax(300px, auto);
 	}
 </style>
