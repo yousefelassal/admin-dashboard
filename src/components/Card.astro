@@ -2,10 +2,20 @@
 const {title, body} = Astro.props;
 ---
 
-<li class="grid grid-rows-3 grid-cols-1 bg-white/50 dark:bg-gray-800/50 rounded-lg shadow-lg p-4 m-2">
+<li class="card-grid grid-cols-1 bg-white/50 dark:bg-gray-800/50 rounded-lg shadow-lg p-4 m-2 h-60">
     <h2>{title}</h2>
     <p>{body}</p>
     <div class="grid grid-flow-col justify-items-end">
         <a href="#" class="btn btn-primary">Read more</a>
+        <a href="#" class="btn btn-primary">Read more</a>
+        <a href="#" class="btn btn-primary">Read more</a>
     </div>
 </li>
+
+<style>
+    .card-grid {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-gap: 1rem;
+    }
+</style>
