@@ -1,27 +1,20 @@
 ---
-
+const {src, tag, body} = Astro.props;
 ---
 
-<div class="profile">
-
+<div class="profile gap-2">
+    <div class="profile-image">
+        <img src={src} alt="Profile Image">
+    </div>
+    <div class="profile-text grid">
+        <h2>{tag}</h2>
+        <p>{body}</p>
+    </div>
 </div>
 
 <style>
-    .profile {
-        width: 100%;
-        height: 100%;
-        background: url('https://images.unsplash.com/photo-1517245386807-9b4d0dd9c1c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1b6b2b0b5b0b0b0b0b0b0b0b0b0b0b0b&auto=format&fit=crop&w=1350&q=80');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-    }
-
-    .profile::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, .5);
+    .profile{
+        display: grid;
+        grid-template-columns: auto 1fr;
     }
 </style>
